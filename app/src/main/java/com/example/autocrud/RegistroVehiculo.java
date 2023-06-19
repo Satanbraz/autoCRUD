@@ -101,7 +101,7 @@ public class RegistroVehiculo extends AppCompatActivity {
         if (Modelo.isEmpty()) {
             editModelo.setError("Debe de ingresar Modelo del vehiculo");
         } //Validar que la cantidad de caracteres del modelo sea mayor a 2
-        else if (Modelo.length() < 2) {
+        else if (Modelo.length() < 1) {
             editModelo.setError("Debe de ingresar un Modelo correcto");
             return;
         }

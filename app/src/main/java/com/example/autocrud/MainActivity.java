@@ -12,6 +12,7 @@ public class MainActivity extends AppCompatActivity {
     /**variable para asignar tiempo de actividad de la Activity*/
     final static int splash_screen = 5000;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

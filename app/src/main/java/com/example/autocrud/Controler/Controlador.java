@@ -17,7 +17,7 @@ import com.example.autocrud.Modelo.Auto;
 
             if (auto.getModelo().isEmpty()) {
                 throw new RuntimeException("Ingrese Modelo del vehículo");
-            } else if (auto.getModelo().length() < 3) {
+            } else if (auto.getModelo().length() < 1) {
                 throw new RuntimeException("El modelo debe tener un largo superior a 3 caracteres");
             }
 
@@ -57,7 +57,7 @@ import com.example.autocrud.Modelo.Auto;
 
             if (auto.getModelo().isEmpty()) {
                 throw new RuntimeException("Ingrese Modelo del vehículo");
-            } else if (auto.getModelo().length() < 3) {
+            } else if (auto.getModelo().length() < 1) {
                 throw new RuntimeException("El modelo debe tener un largo superior a 3 caracteres");
             }
 

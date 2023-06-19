@@ -1,6 +1,6 @@
 package com.example.autocrud.Modelo;
-
 public class Auto {
+
 
     private String marca;
 
@@ -54,7 +54,7 @@ public class Auto {
         this.anio = anio;
     }
 
-    public double getCilindrada() {
+    public int getCilindrada() {
         return cilindrada;
     }
 

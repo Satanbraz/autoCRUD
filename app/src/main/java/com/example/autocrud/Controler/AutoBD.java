@@ -3,9 +3,6 @@ package com.example.autocrud.Controler;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.widget.AdapterView;
-
-import com.example.autocrud.RegistroVehiculo;
 
 public class AutoBD extends SQLiteOpenHelper {
 
@@ -17,6 +14,7 @@ public class AutoBD extends SQLiteOpenHelper {
     public AutoBD(Context context) {
         super(context,DATABASE_NOMBRE,null,DATABASE_VERSION);
     }
+
 
     @Override
     public void onCreate(SQLiteDatabase db) {

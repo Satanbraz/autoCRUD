@@ -217,7 +217,7 @@ public class ActualizarVehiculo extends AppCompatActivity {
             Cursor c = SQLiteDB.rawQuery("select PATENTE FROM vehiculos", null);
             if (c.moveToFirst()) {
                 do {
-                    String dato = c.getString(0);//Se lista dato PATENTE
+                    String dato = c.getString(0).toUpperCase();//Se lista dato PATENTE
                     datos.add(dato);
                 } while (c.moveToNext());
             }
