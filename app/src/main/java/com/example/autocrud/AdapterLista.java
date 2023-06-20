@@ -121,4 +121,8 @@ public class AdapterLista extends RecyclerView.Adapter<AdapterLista.AutoViewHold
         }
     }
 
+    public void filtrarAuto(ArrayList<Auto> filtarAuto){
+        this.listaAutos = filtarAuto;
+        notifyDataSetChanged();
+    }
 }

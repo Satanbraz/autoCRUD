@@ -3,7 +3,10 @@ package com.example.autocrud;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,6 +22,8 @@ public class MostrarRegistros extends AppCompatActivity {
     /**Se declaran las variables*/
     ArrayList<Auto> autoArrayList;
     RecyclerView recyclerView;
+    AdapterLista adapterLista;
+    EditText etBuscar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,15 +37,42 @@ public class MostrarRegistros extends AppCompatActivity {
 
         llenarAuto();
         // Obtener referencia al RecyclerView y configurarlo con el adaptador
-        AdapterLista adapterLista = new AdapterLista(autoArrayList);
-        recyclerView.setAdapter(adapterLista);
+
+        etBuscar = findViewById(R.id.edtBuscar);
+
+        etBuscar.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {}
+            @Override
+            public void afterTextChanged(Editable s) {
+                filtrar(s.toString());
+            }
+        });
+
 
         // Deshabilitar el onClick del CardView
         adapterLista.setCardViewClickable(false);
     }//Fin metodo onCreate
 
+    public void filtrar(String texto){
+        ArrayList<Auto> filtroAuto = new ArrayList<>();
+        for(Auto auto : autoArrayList){
+            if (auto.getMarca().toLowerCase().contains(texto.toLowerCase())||
+                    auto.getModelo().toLowerCase().contains(texto.toLowerCase())||
+                    auto.getPatente().toLowerCase().contains(texto.toLowerCase())||
+                    auto.getColor().toLowerCase().contains(texto.toLowerCase())){
+                filtroAuto.add(auto);
+            }
+        }
+        adapterLista.filtrarAuto(filtroAuto);
+    }
+
+
     //Metodo para llenar RecyclerView con los datos de la BD
     private void llenarAuto(){
+        autoArrayList.clear();
 
         Auto auto;
 
@@ -72,6 +104,9 @@ public class MostrarRegistros extends AppCompatActivity {
             //Arrojar mensaje de error
             Toast.makeText(this, " "+e.getMessage(), Toast.LENGTH_SHORT).show();
             Log.d("Error: ", e.getMessage());
-        }SQLiteDB.close();
+        }
+        adapterLista = new AdapterLista(autoArrayList);
+        recyclerView.setAdapter(adapterLista);
+        SQLiteDB.close();
     }
 }
