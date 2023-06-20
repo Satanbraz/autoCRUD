@@ -1,17 +1,11 @@
 package com.example.autocrud;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Context;
 import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
-import com.example.autocrud.Controler.AutoBD;
-import com.example.autocrud.Modelo.Auto;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class SelectOption extends AppCompatActivity {
 
@@ -31,15 +25,6 @@ public class SelectOption extends AppCompatActivity {
         read = findViewById(R.id.btnRead);
         update = findViewById(R.id.btnUpd);
         delete = findViewById(R.id.btnDel);
-
-        /**Creamos la Base de Datos de SQLite*/
-        //AutoBD ADB = new AutoBD(this);
-        //SQLiteDatabase SQLitedb = ADB.getWritableDatabase();
-        //if (SQLitedb!= null){
-        //    Toast.makeText(this, "La base de datos ha sido creada", Toast.LENGTH_SHORT).show();
-        //}else{
-        //    Toast.makeText(this, "La base de datos ya existe o hay un error en la creacion", Toast.LENGTH_SHORT).show();
-        //}
 
         /**Se crean los eventos clickListener para cada boton de opciones*/
         create.setOnClickListener(new View.OnClickListener() {
@@ -74,9 +59,5 @@ public class SelectOption extends AppCompatActivity {
                 onPause();
             }
         });
-    }
-
-
-
-
+    }//Fin metodo onCreate
 }

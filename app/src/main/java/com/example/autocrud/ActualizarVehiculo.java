@@ -1,12 +1,9 @@
 package com.example.autocrud;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -15,11 +12,12 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.autocrud.Controler.AutoBD;
 import com.example.autocrud.Controler.Controlador;
 import com.example.autocrud.Modelo.Auto;
 
-import java.nio.file.Path;
 import java.util.ArrayList;
 
 public class ActualizarVehiculo extends AppCompatActivity {
@@ -85,9 +83,7 @@ public class ActualizarVehiculo extends AppCompatActivity {
             }
 
             @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
+            public void onNothingSelected(AdapterView<?> parent) {}
         });
 
         /**Evento de Boton Actualizar*/
@@ -148,19 +144,17 @@ public class ActualizarVehiculo extends AppCompatActivity {
         else if (Marca.length() < 2) {
             editMarca.setError("Debe de ingresar una Marca correcta");
             return;
-        }
-        //Fin validacion campo de texto Marca-------------------------------------------------------
+        }//Fin validacion campo de texto Marca-------------------------------------------------------
 
         /**Validacion campo de texto Modelo
          * Preguntar si el campo de texto Modelo esta vacio*/
         if (Modelo.isEmpty()) {
             editModelo.setError("Debe de ingresar Modelo del vehiculo");
-        } //Validar que la cantidad de caracteres del modelo sea mayor a 2
-        else if (Modelo.length() < 2) {
+        } //Validar que la cantidad de caracteres del modelo sea mayor a 1
+        else if (Modelo.length() < 1) {
             editModelo.setError("Debe de ingresar un Modelo correcto");
             return;
-        }
-        //Fin validacion campo de texto Modelo------------------------------------------------------
+        }//Fin validacion campo de texto Modelo------------------------------------------------------
 
         /**Validacion campo de texto Color
          * Preguntar si el campo de texto Color esta vacio*/
@@ -170,8 +164,7 @@ public class ActualizarVehiculo extends AppCompatActivity {
         else if (Color.length() < 3) {
             editColor.setError("Debe de ingresar un Color correcto");
             return;
-        }
-        //Fin validacion campo de texto Color------------------------------------------------------
+        }//Fin validacion campo de texto Color------------------------------------------------------
 
         /**Validacion campo de texto Anio
          * Preguntar si el campo texto Anio esta vacio*/
@@ -182,8 +175,7 @@ public class ActualizarVehiculo extends AppCompatActivity {
         else if (Integer.parseInt(Anio) < 1886 || Integer.parseInt(Anio) > 2024) {
             editAnio.setError("Debe de ingresar un Año dentro del rango: 1886-2024");
             return;
-        }
-        //Fin validacion campo texto Anio-----------------------------------------------------------
+        }//Fin validacion campo texto Anio-----------------------------------------------------------
 
         /**Validacion campo de texto Cilindrada
          * Preguntar si el campo texto Cilindrada esta vacio*/
@@ -194,19 +186,19 @@ public class ActualizarVehiculo extends AppCompatActivity {
         else if (Integer.parseInt(Cilindrada) < 600 || Integer.parseInt(Cilindrada) > 5600) {
             editCilind.setError("Debe de ingresar un valor dentro del rango: 600cc-5600cc");
             return;
-        }
-        //Fin validacion campo texto Cilindrada-----------------------------------------------------------
+        }//Fin validacion campo texto Cilindrada-----------------------------------------------------------
         ActualizarRegistro(auto);
 
     }//Fin metodo validacion de formulario----------------------------------------------------------
 
-
-    /**Se crean losmetodos para agregar los datos al spinner*/
+    /**Se crean los metodos para agregar los datos al spinner*/
     private void CargarVistas() {
         ArrayList<String> listado = arrayRegs();
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, listado);
         spinnerPat.setAdapter(adapter);
     }
+
+    /**Se genera el metodo para cargar datos al Spinner*/
     private ArrayList<String> arrayRegs() {
         ArrayList<String> datos = new ArrayList<String>();//Se genera un array con los registros
         datos.add("Elija pantente");

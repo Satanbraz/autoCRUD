@@ -1,24 +1,14 @@
 package com.example.autocrud;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
-import android.app.AlertDialog;
-import android.content.ContentValues;
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.ListView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.autocrud.Controler.AutoBD;
 import com.example.autocrud.Modelo.Auto;
@@ -29,7 +19,6 @@ public class EliminarVehiculo extends AppCompatActivity{
     /**Se declaran las variables*/
     ArrayList<Auto> autoArrayList;
     RecyclerView recyclerView;
-    AdapterLista adapterLista;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,4 +69,4 @@ public class EliminarVehiculo extends AppCompatActivity{
         }SQLiteDB.close();
     }
 
-    }
+}

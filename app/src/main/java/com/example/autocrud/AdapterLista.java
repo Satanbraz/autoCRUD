@@ -29,9 +29,7 @@ import java.util.Date;
 public class AdapterLista extends RecyclerView.Adapter<AdapterLista.AutoViewHolder>{
 
     ArrayList <Auto> listaAutos;
-    private OnItemClickListener listener;
     private boolean isClickable = true;
-
 
     public void setCardViewClickable(boolean clickable) {
         isClickable = clickable;
@@ -39,11 +37,6 @@ public class AdapterLista extends RecyclerView.Adapter<AdapterLista.AutoViewHold
 
     public AdapterLista(ArrayList<Auto> listaAutos){
         this.listaAutos = listaAutos;
-    }
-
-    public AdapterLista(ArrayList<Auto> listaAutos,OnItemClickListener listener) {
-        this.listaAutos = listaAutos;
-        this.listener = listener;
     }
 
     @NonNull
@@ -104,14 +97,13 @@ public class AdapterLista extends RecyclerView.Adapter<AdapterLista.AutoViewHold
                                 Log.d("Error: ",e.getMessage());
                                 Toast.makeText(v.getContext(), "Error: "+e.getMessage(), Toast.LENGTH_SHORT).show();
                             }SQLiteDB.close();
-                        }
+                        }//Fin metodo onClick Positive Button
                     });
                     builder.setNegativeButton("Cancelar",null);
                     builder.show();
-                }
+                }//Fin metodo onClick CardView
             });
         }else holder.cardView.setOnClickListener(null);// Deshabilitar el onClick
-
     }
 
     @Override
@@ -133,10 +125,6 @@ public class AdapterLista extends RecyclerView.Adapter<AdapterLista.AutoViewHold
             Info = itemView.findViewById(R.id.txtInfo);
             cardView = itemView.findViewById(R.id.cardDatos);
         }
-    }
-
-    public interface OnItemClickListener {
-        void onItemClick(int position);
     }
 
 }

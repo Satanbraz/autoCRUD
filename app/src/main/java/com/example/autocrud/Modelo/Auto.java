@@ -1,7 +1,6 @@
 package com.example.autocrud.Modelo;
 public class Auto {
 
-
     private String marca;
 
     private String modelo;

@@ -70,8 +70,8 @@ public class RegistroVehiculo extends AppCompatActivity {
                 }catch (RuntimeException e){
                     Toast.makeText(getBaseContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
-            }
-        });//Fin evento onClick
+            }//Fin metodo onClick
+        });//Fin evento onClickListener
     }//Fin metodo onCreate
 
 

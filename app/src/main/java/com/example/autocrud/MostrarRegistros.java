@@ -8,7 +8,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.autocrud.Controler.AutoBD;
@@ -20,7 +23,7 @@ public class MostrarRegistros extends AppCompatActivity {
     /**Se declaran las variables*/
     ArrayList<Auto> autoArrayList;
     RecyclerView recyclerView;
-    CardView cardView;
+    EditText edBuscar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,6 +79,4 @@ public class MostrarRegistros extends AppCompatActivity {
             Log.d("Error: ", e.getMessage());
         }SQLiteDB.close();
     }
-
-
 }

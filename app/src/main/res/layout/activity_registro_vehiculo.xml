@@ -36,7 +36,7 @@
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/linearLayoutCompat"
-        android:layout_width="320dp"
+        android:layout_width="300dp"
         android:layout_height="500dp"
         android:gravity="center_horizontal"
         android:orientation="vertical"
