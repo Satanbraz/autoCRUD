@@ -21,34 +21,18 @@
         app:layout_constraintVertical_bias="0.166" />
 
     <TextView
-        android:id="@+id/titulo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="CRUDauto"
-        android:textSize="40sp"
-        android:textColor="#ffff"
-        android:textAlignment="gravity"
-        android:fontFamily="serif-monospace"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.678" />
-
-
-    <TextView
         android:id="@+id/slogan"
-        android:layout_width="268dp"
+        android:layout_width="wrap_content"
         android:layout_height="39dp"
         android:text="Registro de Vehiculos"
-        android:textColor="#ffff"
-        android:textSize="20sp"
         android:textAlignment="center"
+        android:textColor="#ffff"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.794" />
+        app:layout_constraintVertical_bias="0.658" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

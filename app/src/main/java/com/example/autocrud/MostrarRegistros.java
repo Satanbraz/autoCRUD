@@ -1,18 +1,14 @@
 package com.example.autocrud;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.util.Log;
-import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.autocrud.Controler.AutoBD;
 import com.example.autocrud.Modelo.Auto;
@@ -23,7 +19,6 @@ public class MostrarRegistros extends AppCompatActivity {
     /**Se declaran las variables*/
     ArrayList<Auto> autoArrayList;
     RecyclerView recyclerView;
-    EditText edBuscar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
